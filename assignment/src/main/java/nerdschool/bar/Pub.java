@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class Pub {
-    public static final String ONE_BEER = "hansa";
-    public static final String ONE_CIDER = "grans";
-    public static final String A_PROPER_CIDER = "strongbow";
+    public static final String HANSA = "hansa";
+    public static final String GRANS = "grans";
+    public static final String STRONGBOW = "strongbow";
     public static final String GT = "gt";
     public static final String BACARDI_SPECIAL = "bacardi_special";
 
@@ -16,15 +16,15 @@ public class Pub {
 
     public Pub(){
          drinkPrices = new HashMap<String, Integer>();
-         drinkPrices.put(ONE_BEER, 74);
-         drinkPrices.put(ONE_CIDER, 103);
-         drinkPrices.put(A_PROPER_CIDER, 110);
+         drinkPrices.put(HANSA, 74);
+         drinkPrices.put(GRANS, 103);
+         drinkPrices.put(STRONGBOW, 110);
          drinkPrices.put(GT, (getUnitPriceGin() + getUnitPriceTonic() +
                  getUnitPriceGreenStuff()));
          drinkPrices.put(BACARDI_SPECIAL, (getUnitPriceGin()/2 + getUnitPriceRum() +
                  getUnitPriceGrenadine() + getUnitPriceLime()));
 
-         discountedDrinks = new ArrayList<>(Arrays.asList(ONE_CIDER, ONE_BEER, A_PROPER_CIDER));
+         discountedDrinks = new ArrayList<>(Arrays.asList(GRANS, HANSA, STRONGBOW));
     }
 
     public int computeCost(String drink, boolean isStudent, int numberOfDrinks) {
@@ -42,23 +42,15 @@ public class Pub {
         return price*numberOfDrinks;
     }
 
-    private int getUnitPriceRum() {
-        return 65;
-    }
+    private int getUnitPriceRum() { return 65; }
 
-    private int getUnitPriceGrenadine() {return 10;}
+    private int getUnitPriceGrenadine() { return 10; }
 
-    private int getUnitPriceLime() {
-        return 10;
-    }
+    private int getUnitPriceLime() { return 10; }
 
-    private int getUnitPriceGreenStuff() {
-        return 10;
-    }
+    private int getUnitPriceGreenStuff() { return 10; }
 
-    private int getUnitPriceTonic() {
-        return 20;
-    }
+    private int getUnitPriceTonic() { return 20; }
 
     private int getUnitPriceGin() {
         return 85;
